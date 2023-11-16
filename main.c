@@ -3,56 +3,24 @@
 
 int main(int argc, char *argv[])
 {
-  int i;
-  int grade[5];
-  int *ptr;
-  int num = 0;
+  char *pc;
+  int *pi;
+  double *pd;
   
-  ptr = grade;
+  pc = (char*)10000;
+  pi = (int*)10000;
+  pd = (double*)10000;
   
-  for (i=0; i<5; i++)
-  {
-      printf("input value(%i) = ", i);
-      scanf("%d", &grade[i]);
-  }
+  printf("증가 전 : pc = %d, pi = %d, pd = %d\n", pc, pi, pd);
   
-  for(i=0; i<5; i++)
-  {
-      printf("grade[%d] = %d\n", i, grade[i]);
-      num = num + *(ptr+i);
-  }
+  pc++;
+  pi++;
+  pd++;
   
-  printf("average : %i\n", num/5);
-  
+  printf("증가 후 : pc = %d, pi = %d, pd = %d\n", pc, pi, pd); 
   
   system("PAUSE");	
   return 0;
 }
 
-/*
-//교수님 설명 코드 (결과는 동일)  
-int main(int argc, char *argv[])
-{
-  int i;
-  int grade[5];
-  int average = 0;
-  
-  for (i=0; i<5; i++)
-  {
-      printf("input value(%i) = ", i);
-      scanf("%d", &grade[i]);
-  }
-  
-  for(i=0; i<5; i++)
-  {
-      printf("grade[%d] = %d\n", i, *(grade+i));
-      average = average + *(grade+i);
-  }
-  
-  printf("average : %i\n", average/5);
-  
-  
-  system("PAUSE");	
-  return 0;
-}
-*/
+
