@@ -1,45 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//call by reference
-void swap (int *x, int *y){
-  int temp;
-  temp = *x;
-  *x = *y;
-  *y = temp;
-}
-
 int main(int argc, char *argv[])
 {
-  int a = 3;
-  int b = 5;
+  int i;
+  int grade[5];
+  int *ptr;
+  int num = 0;
   
-  swap(&a,&b);
-
-  printf("a:%i, b:%i\n", a, b);
-
+  ptr = grade;
+  
+  for (i=0; i<5; i++)
+  {
+      printf("input value(%i) = ", i);
+      scanf("%d", &grade[i]);
+  }
+  
+  for(i=0; i<5; i++)
+  {
+      printf("grade[%d] = %d\n", i, grade[i]);
+      num = num + *(ptr+i);
+  }
+  
+  printf("average : %i\n", num/5);
+  
+  
   system("PAUSE");	
   return 0;
 }
 
 /*
-//call by value
-void swap (int x, int y){
-  int temp;
-  temp = x;
-  x = y;
-  y = temp;
-}
-
+//교수님 설명 코드 (결과는 동일)  
 int main(int argc, char *argv[])
 {
-  int a = 3;
-  int b = 5;
+  int i;
+  int grade[5];
+  int average = 0;
   
-  swap(a,b);
-
-  printf("a:%i, b:%i\n", a, b);
-
+  for (i=0; i<5; i++)
+  {
+      printf("input value(%i) = ", i);
+      scanf("%d", &grade[i]);
+  }
+  
+  for(i=0; i<5; i++)
+  {
+      printf("grade[%d] = %d\n", i, *(grade+i));
+      average = average + *(grade+i);
+  }
+  
+  printf("average : %i\n", average/5);
+  
+  
   system("PAUSE");	
   return 0;
-}*/
+}
+*/
